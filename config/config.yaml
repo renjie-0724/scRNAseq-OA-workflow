@@ -1,1 +1,24 @@
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  results: "results"
+  figures: "results/figures"
+  tables: "results/tables"
+
+params:
+  # QC thresholds
+  min_features: 200
+  max_features: 6000
+  max_mito: 5
+
+  # PCA / UMAP
+  npcs: 50
+  dims_umap: [1, 25]
+
+  # Clustering
+  resolution: 0.2
+
+  # Marker / DE
+  marker_min_pct: 0.25
+  marker_logfc: 0.5
 
