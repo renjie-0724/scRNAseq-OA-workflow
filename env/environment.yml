@@ -1,31 +1,37 @@
-name: scrnaseq-oa
+name: scrna-oa
 channels:
   - conda-forge
   - bioconda
   - defaults
+
 dependencies:
-  - r-base=4.3
+  - r-base=4.5.1
   - r-essentials
-  - r-seurat
+  - r-seurat=5.0.1
+  - r-seuratobject
   - r-ggplot2
   - r-dplyr
   - r-readr
   - r-tidyr
   - r-purrr
   - r-stringr
-  - r-yaml
-  - r-optparse
-  - r-patchwork
-  - r-data.table
   - r-pheatmap
+  - r-optparse
+  - r-reshape2
   - r-openxlsx
-  - r-remotes
+  - r-data.table
+  - r-gsva
+  - bioconductor-gseabase
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - bioconductor-msigdbr
   - bioconductor-singlecellexperiment
   - bioconductor-scater
   - bioconductor-scran
-  - bioconductor-fgsea
-  - bioconductor-clusterprofiler
-  - bioconductor-org.Hs.eg.db
-  - bioconductor-msigdbr
-  - gcc            # 某些包需要编译
+  - r-yaml
+  - r-remotes
+  - r-devtools
   - git
+  - wget
+  - python=3.10
+  - snakemake=7.32
