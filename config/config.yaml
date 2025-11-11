@@ -47,4 +47,12 @@ de:
     ident_2: "Sublining_fibroblasts"
 
 gsea:
-  collections: ["C2", "C5"]
+  method: "gsva"
+  score: "ssgsea"
+  collections: ["C2","C5"]
+  c2_filter: []
+  c5_filter: []
+  min_size: 10
+  max_size: 500
+  parallel: true
+  ncores: 4
