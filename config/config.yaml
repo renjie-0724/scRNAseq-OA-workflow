@@ -5,20 +5,46 @@ paths:
   figures: "results/figures"
   tables: "results/tables"
 
-params:
-  # QC thresholds
+qc:
+  min_cells: 3
   min_features: 200
   max_features: 6000
-  max_mito: 5
+  percent_mt: 5
 
-  # PCA / UMAP
+norm:
+  method: "LogNormalize"
+  scale_factor: 1000000
+  hvg: 2000
+
+dimred:
   npcs: 50
-  dims_umap: [1, 25]
 
-  # Clustering
+clustering:
+  ndims: 25
   resolution: 0.2
 
-  # Marker / DE
-  marker_min_pct: 0.25
-  marker_logfc: 0.5
+marker:
+  min_pct: 0.25
+  logfc: 0.5
 
+annotation:
+  reference_markers:
+    Lining_fibroblasts: ["PRG4"]
+    Sublining_fibroblasts: ["PRG4", "THY1"]
+    Fibroblasts: ["COL1A1", "COL1A2"]
+    Myeloid: ["MARCO"]
+    T_cells: ["CD3E"]
+    Plasma_cells: ["SDC1"]
+    Endothelial_cells: ["PLVAP"]
+    B_cells: ["MS4A1"]
+    Mural_cells: ["RGS5"]
+    Mast_cells: ["MS4A2"]
+    Prolif_macrophages: ["MKI67", "MARCO"]
+
+de:
+  contrast:
+    ident_1: "Lining_fibroblasts"
+    ident_2: "Sublining_fibroblasts"
+
+gsea:
+  collections: ["C2", "C5"]
